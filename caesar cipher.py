@@ -31,7 +31,9 @@ def caesar(text, shift, encrypt = True):
     #although the message is encrypted, the uppercase characters have been left untouched.
     # This happens because the translation table does not include uppercase letters.
     # So Update the str.maketrans() call by concatenating to each argument the uppercase version of the argument itself.
+    #so str.maketrans(a,b) takes to arguments and replaces the second with first a replaced by b here
     translation_table = str.maketrans(alphabet + alphabet.upper(), shifted_alphabet + shifted_alphabet.upper())
+    # here the output of the translate table is ascii valus then translate function converts to alphabet
     encrypted_text = text.translate(translation_table)
     return encrypted_text
 def encrypt(text , shift):
